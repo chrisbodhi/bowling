@@ -50,6 +50,16 @@ describe BowlingGame do
 				expect(game.score).to eq 26
 			end
 		end
+
+	describe "#test_perfect" do
+		context 'When all strikes are thrown' do
+		  it 'returns the total score as 300' do
+				12.times {game.roll(10)}
+
+				expect(game.test_perfect).to eq 300
+		  end
+		end
+	end
 		  
 	end
 end

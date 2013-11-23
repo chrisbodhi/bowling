@@ -25,6 +25,7 @@ class BowlingGame
 
 			if strike?
 				score_strike
+				test_perfect
 			elsif spare?
 				score_spare
 			else
@@ -80,4 +81,18 @@ class BowlingGame
 		@total_score += @roll + @next_roll
 		@current_roll += 2
 	end
+
+	# Checks the length of the array and the value of each item 
+	# to test for a perfect game.
+	#
+	# Returns @total_score as 300.
+	def test_perfect
+		if @rolls.length == 12
+			if @rolls.each { |num| num == 10 }
+				@total_score = 300
+			end
+		end
+		return @total_score
+	end
+
 end
